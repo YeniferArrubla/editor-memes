@@ -55,20 +55,29 @@ body {
 
 .alingTextLeft .topText {
     justify-content: left;
+    text-align: left;
 }
 
 .alingTextLeft .bottomText {
     justify-content: left;
+    text-align: left;
 }
 
 .alingTextRight .topText {
     justify-content: right;
+    text-align: right;
 }
 .alingTextRight .bottomText {
     justify-content: right;
+    text-align: right;
 }
 
-.alingTextCenter .topText .bottomText{
+.alingTextCenter .bottomText{
+    justify-content: center;
+    text-align: center;
+}
+
+.alingTextCenter .topText{
     justify-content: center;
     text-align: center;
 }
@@ -77,6 +86,7 @@ body {
     background-color: transparent !important;
     position: absolute;
     width: 100%;
+    top: 0;
 }
 .trasparentTxtBG .bottomText{
     background-color: transparent !important;
@@ -158,10 +168,18 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
 }
 
-.container .topText, .bottomText {
+.topText{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: var(--whiteColor);
+    font-size: 25px;
+}
+.bottomText{
     height: 20%;
     display: flex;
     justify-content: center;
