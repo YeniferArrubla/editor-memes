@@ -8,14 +8,14 @@
 :root {
     --blackcolor:  black;
     --whiteColor: white;
-    --backgroundColorlightModeHeader: rgb(226, 221, 221) ;
-    --backgroundColorlightModefirstContainer: rgb(247, 242, 242);
-    --backgroundColorlightModeAside: rgb(250, 250, 250);
-    --backgroundColorlightModeInputTypeRange:  rgb(68, 66, 66);
-    --backgroundColorHeader:rgb(48, 46, 46);
-    --backgroundColorfirstContainer:rgb(61, 60, 60);
-    --backgroundColorBtns:rgb(145, 142, 142);
-
+    --bGHeader:rgb(48, 46, 46);
+    --bGCont:rgb(61, 60, 60);
+    --bGBtn:rgb(145, 142, 142);
+    --bGLightMHeader: rgb(226, 221, 221) ;
+    --bGLightMCont: rgb(247, 242, 242);
+    --bGLightMAside: rgb(250, 250, 250);
+    --bGrLightMInputRange:  rgb(68, 66, 66);
+    
 }
 
 body {
@@ -26,23 +26,86 @@ body {
 /* Light Mode Styles */
 
 .lightMode header {
-    background-color: var(--backgroundColorlightModeHeader);
+    background-color: var(--bGLightMHeader);
     color: var(--blackcolor);
 }
 
 .lightMode .firstContainer{
-    background-color: var(--backgroundColorlightModefirstContainer);
+    background-color: var(--bGLightMCont);
     color: var(--blackcolor);
 }
 
 .lightMode aside{
-    background-color: var(--backgroundColorlightModeAside);
+    background-color: var(--bGLightMAside);
     color: var(--blackcolor);
 }
 
 .lightMode input[type=range]::-webkit-slider-thumb {
-    background-color: var(--backgroundColorlightModeInputTypeRange);
+    background-color: var(--bGrLightMInputRange);
 }
+
+/* Hidden Class for JS */
+.topTextOculto .topText{
+    display: none;
+}
+
+.bottomTextOculto .bottomText{
+    display: none;
+}
+
+.alingTextLeft .topText {
+    justify-content: left;
+}
+
+.alingTextLeft .bottomText {
+    justify-content: left;
+}
+
+.alingTextRight .topText {
+    justify-content: right;
+}
+.alingTextRight .bottomText {
+    justify-content: right;
+}
+
+.alingTextCenter .topText .bottomText{
+    justify-content: center;
+    text-align: center;
+}
+
+.trasparentTxtBG .topText{
+    background-color: transparent !important;
+    position: absolute;
+    width: 100%;
+}
+.trasparentTxtBG .bottomText{
+    background-color: transparent !important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.trasparentTxtBG .container{
+    position: relative;
+}
+
+.outlineDark .topText{
+    -webkit-text-stroke: 2px black;
+}
+.outlineDark .bottomText{
+    -webkit-text-stroke: 2px black;
+}
+
+.outlineWhite .topText{
+    -webkit-text-stroke: 2px white;
+}
+.outlineWhite .bottomText{
+    -webkit-text-stroke: 2px white;
+}
+
+.outlineNone .topText .bottomText{
+    -webkit-text-stroke: none;
+}
+
 
 /* Main Section*/
 
@@ -50,7 +113,7 @@ header {
     width: 80%;
     height: 18%;
     text-align: center;
-    background-color: var(--backgroundColorHeader);
+    background-color: var(--bGHeader);
     color: var(--whiteColor);
 }
 
@@ -63,18 +126,18 @@ h1 {
     border-style: none;
     padding: 8px;
     border-radius: 10px;
-    background-color: var(--backgroundColorHeader);
+    background-color: var(--bGHeader);
     color: var(--whiteColor);
     cursor: pointer;
 }
 .btnHeader:hover{
-    background-color: var(--backgroundColorBtns);
+    background-color: var(--bGBtn);
 }
 
 .firstContainer {
     height: 82%;
     width: 80%;
-    background-color: var(--backgroundColorfirstContainer);
+    background-color: var(--bGCont);
     color: var(--whiteColor);
         
 }
@@ -95,55 +158,51 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 
 .container .topText, .bottomText {
-    height: 10%;
+    height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--blackcolor);
+    background-color: black;
     color: var(--whiteColor);
+    font-size: 25px;
 }
 
 .imgContainer {
-    height: 80%;
+    height: 100%;
     width: 100%;
+    background-size: 100% 100%; 
+    background-color: var(--bGBtn);
 }
 
 img {
     height: 100%;
     width: 100%;
 }
-    /*     filter:brightness(100%);
-        filter: opacity(100%);
-        filter: contrast(100%);
-        filter: blur();
-        filter: grayscale(0%);
-        filter: sepia(0%);
-        filter: hue-rotate();
-        filter: saturate(100%);
-        filter: invert(0%); */
 
 .downloadBtn {
     border-style: none;
     padding: 10px;
     border-radius: 8px;
-    background-color: var(--backgroundColorBtns);
+    background-color: var(--bGBtn);
     color: var(--whiteColor);
     margin-top: 8px;
     cursor: pointer;
 }
 .downloadBtn:hover{
-    background-color: var(--backgroundColorHeader);
+    background-color: var(--bGHeader);
 }
 
+/* Aside General Features */
 aside {
     width: 20%;
     position: absolute;
     top: 0;
     right: 0;
-    background-color: var(--backgroundColorlightModeInputTypeRange);
+    background-color: var(--bGrLightMInputRange);
     color: var(--whiteColor);
     padding: 0px 20px;
     line-height: 1.3em;
@@ -164,12 +223,12 @@ input[type=text], [type=number]{
     height: 22px;
     width: 100%;
     border-radius: 2px;
-    background-color: var(--backgroundColorBtns);
+    background-color: var(--bGBtn);
     color: var(--whiteColor);
 }
 
 input[type=text]:hover, [type=number]:hover{
-    background-color: var(--backgroundColorHeader)
+    background-color: var(--bGHeader)
 }
 
 input[type=range]{
@@ -200,7 +259,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 12px;
     width: 12px;
     border-radius: 50%;
-    background:var(--backgroundColorlightModeHeader);
+    background:var(--bGLightMHeader);
     cursor: pointer;
     margin-top: -2px;
 }
@@ -209,7 +268,7 @@ input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 8px;
     cursor: pointer;
-    background:var(--backgroundColorBtns);
+    background:var(--bGBtn);
     border-radius: 5px;
 }
   
@@ -225,7 +284,7 @@ h3 {
 }
 
 select {
-    background-color: var(--backgroundColorBtns);
+    background-color: var(--bGBtn);
     padding: 3px;
     border-radius: 3px;
     color: var(--whiteColor);
@@ -233,11 +292,10 @@ select {
 }
 
 select:hover{
-    background-color: var(--backgroundColorHeader);
+    background-color: var(--bGHeader);
 }
 
-/* Estilos fondo */
-
+/* Aside Image Panel */
 .backgroundContainer {
     display: flex;
     justify-content: space-between;
@@ -245,7 +303,7 @@ select:hover{
 
 .backgroundColorContainer {
     display: flex;
-    background-color: var(--backgroundColorBtns);
+    background-color: var(--bGBtn);
     align-items: center;
     gap: 6px;
     padding: 3px;
@@ -253,7 +311,7 @@ select:hover{
 }
 
 .backgroundColorContainer:hover{
-    background-color: var(--backgroundColorHeader)
+    background-color: var(--bGHeader)
 }
 
 input[type=color] {
@@ -278,7 +336,7 @@ input[type=color]::-webkit-color-swatch {
 
 #resetBtn {
     padding: 5px 10px;
-    background-color: var(--backgroundColorBtns);
+    background-color: var(--bGBtn);
     color: var(--whiteColor);
     border: none;
     border-radius: 3px;
@@ -286,18 +344,18 @@ input[type=color]::-webkit-color-swatch {
     margin-top: 18px;
 }
 #resetBtn:hover{
-    background-color: var(--backgroundColorHeader)
+    background-color: var(--bGHeader)
 }
-/* Panel Texto */
 
+/* Aside Text Panel */
 textarea {
-    background-color: var(--backgroundColorBtns);
+    background-color: var(--bGBtn);
     color: var(--whiteColor);
     border-radius: 3px;
 }
 
 textarea:hover{
-    background-color: var(--backgroundColorHeader);
+    background-color: var(--bGHeader);
 }
 
 #selectFontFamily {
@@ -317,7 +375,7 @@ textarea:hover{
     display: flex;
 }
 .alingTextBtn{
-    background-color: var(--backgroundColorBtns);
+    background-color: var(--bGBtn);
     border-style: none;
     width: 25px;
     height: 22px;
@@ -327,7 +385,7 @@ textarea:hover{
 }
 
 .alingTextBtn:hover{
-    background-color: var(--backgroundColorHeader);
+    background-color: var(--bGHeader);
 }
 
 .alingTextBtn i{
@@ -346,7 +404,7 @@ textarea:hover{
 
 .contTextColor  {
     display: flex;
-    background-color: var(--backgroundColorBtns);
+    background-color: var(--bGBtn);
     align-items: center;
     padding: 3px;
     border-radius: 3px;
@@ -354,7 +412,7 @@ textarea:hover{
 }
 
 .contTextColor:hover{
-    background-color:var(--backgroundColorHeader);
+    background-color:var(--bGHeader);
 }
 
 .contOutlineBtns {
@@ -364,12 +422,12 @@ textarea:hover{
 
 .contOutlineBtns button{
     padding: 5px 10px;
-    background-color: var(--backgroundColorBtns);
+    background-color: var(--bGBtn);
     color: var(--whiteColor);
     border: none;
     border-radius: 3px;
 }
 
 .contOutlineBtns button:hover{
-    background-color: var(--backgroundColorHeader);
+    background-color: var(--bGHeader);
 }

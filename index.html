@@ -10,6 +10,14 @@
       href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fasthand&family=Island+Moments&family=Nanum+Pen+Script&family=Poor+Story&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -31,8 +39,6 @@
     ></script>
     <link rel="stylesheet" href="style.css" />
     <title>Generador de Memes</title>
-
-
   </head>
   <body class="" id="body">
     <header>
@@ -48,9 +54,7 @@
       <main class="mainSection">
         <div class="container">
           <p class="topText">Texto Superior</p>
-          <div class="imgContainer">
-            <img src="" alt="" id="imgUrl" />
-          </div>
+          <div class="imgContainer"></div>
           <p class="bottomText">Texto Inferior</p>
         </div>
         <button class="downloadBtn">📩 Descargar Meme</button>
@@ -68,10 +72,10 @@
           <div class="backgroundContainer">
             <div class="backgroundColorContainer">
               <input type="color" id="imgColorBg" />
-              <span>#FFFFFF</span>
+              <span id="colorRef">#FFFFFF</span>
             </div>
             <div>
-              <select name="" id="">
+              <select name="" id="selectBlendMode">
                 <option value="unset">Ninguno</option>
                 <option value="lighten">Aclarar</option>
                 <option value="darken">Oscurecer</option>
@@ -113,6 +117,7 @@
               id="contrast"
               min="100"
               max="1000"
+              step="1"
               value="100"
             />
           </div>
@@ -162,6 +167,7 @@
             />
           </div>
         </div>
+
         <div class="contResetBtn">
           <button id="resetBtn">Restablecer Filtros</button>
         </div>
@@ -171,42 +177,57 @@
         <h2>TEXTO</h2>
         <div>
           <h3>SUPERIOR</h3>
-          <textarea name="" id="topTextArea" cols="25" rows="2" placeholder="TEXTO SUPERIOR"></textarea>
+          <textarea
+            name=""
+            id="topTextArea"
+            cols="25"
+            rows="2"
+            maxlength="40"
+            placeholder="TEXTO SUPERIOR"
+          ></textarea>
           <div>
-            <input type="checkbox" /> <label for="">Sin texto superior</label>
+            <input type="checkbox" id="ckbTopTxt" />
+            <label for="">Sin texto superior</label>
           </div>
         </div>
         <div>
           <h3>INFERIOR</h3>
-          <textarea name="" id="" cols="25" rows="2">TEXTO INFERIOR</textarea>
+          <textarea
+            name=""
+            id="bottomTextArea"
+            cols="25"
+            rows="2"
+            placeholder="TEXTO INFERIOR"
+            maxlength="40"
+          ></textarea>
           <div>
-            <input type="checkbox" /> <label for="">Sin texto Inferior</label>
+            <input type="checkbox" id="ckbbottomTxt" />
+            <label for="">Sin texto Inferior</label>
           </div>
         </div>
         <div>
           <h3>FUENTE</h3>
           <select name="" id="selectFontFamily">
             <option value="Arial">Arial</option>
-            <option value="Arial Black">Arial Black</option>
-            <option value="American Typewriter">American Typewriter</option>
-            <option value="Andale Mono">Andale Mono</option>
-            <option value="Comic Sand MS">Comic Sand MS</option>
+            <option value="fantasy">fantasy</option>
+            <option value="Fasthand">Fasthand</option>
+            <option value="Island Moments">Island Moments</option>
             <option value="Helvetica">Helvetica</option>
-            <option value="Impact">Impact</option>
+            <option value="Nanum Pen Script">Nanum Pen Script</option>
             <option value="Verdana">Verdana</option>
-            <option value="Time New Roman">Time New Roman</option>
+            <option value="Poor Story">Poor Story</option>
           </select>
           <div class="contFontSize">
-            <input type="number" min="12" value="40" />
+            <input type="number" id="fontSize" min="12" max="35" value="25" />
             <div class="contAlingText">
-              <button class="alingTextBtn">
-                <i class="fa-solid fa-align-right"></i>
+              <button class="alingTextBtn" id="aTxtLeft">
+                <i class="fa-solid fa-align-left"></i>
               </button>
-              <button class="alingTextBtn">
+              <button class="alingTextBtn" id="aTxtCenter">
                 <i class="fa-solid fa-align-center"></i>
               </button>
-              <button class="alingTextBtn">
-                <i class="fa-solid fa-align-left"></i>
+              <button class="alingTextBtn" id="aTxtRight">
+                <i class="fa-solid fa-align-right"></i>
               </button>
             </div>
           </div>
@@ -217,40 +238,40 @@
             <div>
               <h3>COLOR</h3>
               <div class="contTextColor">
-                <input type="color" value="#000000" />
-                <span>#000000</span>
+                <input type="color" id="textColor" />
+                <span id="refTextColor">#000000</span>
               </div>
             </div>
             <div>
               <h3>FONDO</h3>
               <div class="contTextColor">
-                <input type="color" value="#FFFFFF" />
-                <span>#FFFFFF</span>
+                <input type="color" id="bGFontFamily"/>
+                <span id="refBGFontFamily">#FFFFFF</span>
               </div>
             </div>
           </div>
           <div>
-            <input type="checkbox" /> <label for="">Fondo trasparente</label>
+            <input type="checkbox" id="transparenBG"/> <label for="">Fondo trasparente</label>
           </div>
         </div>
 
         <div class="contOutline">
           <h3>CONTORNO</h3>
           <div class="contOutlineBtns">
-            <button>Ninguno</button>
-            <button>Claro</button>
-            <button>Oscuro</button>
+            <button id="noOutlineBtn">Ninguno</button>
+            <button id="outlineWhiteBtn">Claro</button>
+            <button id="outlineDarkBtn">Oscuro</button>
           </div>
         </div>
 
         <div>
           <h3>ESPACIADO</h3>
-          <input type="number" name="" id="" min="10" max="50" value="35" />
+          <input type="number" name="" id="spaced" min="10" max="50" value="35" />
         </div>
 
         <div>
           <h3>INTERLINEADO</h3>
-          <select name="" id="">
+          <select name="" id="lineHeightSelect">
             <option value="0.8">0.8</option>
             <option value="1">1</option>
             <option value="1.2" selected>1.2</option>
