@@ -10,6 +10,10 @@ let topText = $('.topText');
 let bottomText = $('.bottomText');
 let imgContainer= $('.imgContainer');
 
+//Close Panel
+let closeImgSection = $('#closeImgSection');
+let closeTxtSection = $('#closeTxtSection');
+
 //Button
 let imgPanelBtn = $('#imgBtn');
 let txtPanelBtn = $('#txtBtn');
@@ -62,21 +66,25 @@ let alingTxtRightBtn = $('#aTxtRight');
 //functions
 
 //Header Buttons
-let changeIPanel = ()=>{
-    if(imgSection.style.display = 'block'){
-        txtSection.style.display = 'none'
+let changeIPanel = () => {
+    body.classList.contains('closeImgSection')
+    if(body.classList.contains('closeImgSection')) {
+        body.classList.remove('closeImgSection')
+        body.classList.remove('openTxtSection')
     } else {
-        txtSection.style.display = 'block'
+        body.classList.remove('closeImgSection')
     }
-};
+}
 
-let changeTPanel = ()=>{
-    if(txtSection.style.display = 'block'){
-        imgSection.style.display = 'none'
+let changeTPanel = () => {
+    body.classList.contains('openTxtSection')
+    if(body.classList.contains('openTxtSection')) {
+        body.classList.add('openTxtSection')
     } else {
-        imgSection.style.display = 'block'
+        body.classList.add('openTxtSection')
+        body.classList.add('closeImgSection')
     }
-};
+}
 
 let changeTheme = ()=>{
     body.classList.toggle('lightMode');

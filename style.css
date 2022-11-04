@@ -45,6 +45,18 @@ body {
 }
 
 /* Hidden Class for JS */
+.closeImgSection #imgSection {
+    display: none;
+}
+
+.openTxtSection #txtSection {
+    display: block;
+}
+
+.closeModal .controlPanel {
+    display: none;
+}
+
 .topTextOculto .topText{
     display: none;
 }
@@ -178,6 +190,7 @@ h1 {
     background-color: black;
     color: var(--whiteColor);
     font-size: 25px;
+    text-align: center;
 }
 .bottomText{
     height: 20%;
@@ -187,6 +200,7 @@ h1 {
     background-color: black;
     color: var(--whiteColor);
     font-size: 25px;
+    text-align: center;
 }
 
 .imgContainer {
@@ -294,7 +308,6 @@ input[type=range]::-webkit-slider-runnable-track {
 h2 {
     text-transform: uppercase;
     text-align: center;
-    margin-top: 15px;
 }
 
 h3 {
@@ -314,6 +327,12 @@ select:hover{
 }
 
 /* Aside Image Panel */
+
+.closePanel{
+    cursor: pointer;
+    font-size: 25px;
+}
+
 .backgroundContainer {
     display: flex;
     justify-content: space-between;
@@ -370,6 +389,7 @@ textarea {
     background-color: var(--bGBtn);
     color: var(--whiteColor);
     border-radius: 3px;
+    width: 100%;
 }
 
 textarea:hover{
@@ -449,3 +469,49 @@ textarea:hover{
 .contOutlineBtns button:hover{
     background-color: var(--bGHeader);
 }
+
+/* Media Queris */
+
+@media (max-width: 1920px) and (min-width: 1370px) {
+    header{
+        height: 15vh;
+    }
+    .firstContainer{
+        height: 85vh;
+    }
+   aside {
+    line-height: 2em;
+    height: 100vh;
+    }
+}
+
+@media (max-width: 1369px) and (min-width: 1280px) {
+    header{
+        height: 18vh;
+    }
+    .firstContainer{
+        height: 82vh;
+    }
+    aside {
+        line-height: 1.3em;
+        height: 100vh;
+        }
+}
+
+@media (max-width: 1279px) and (min-width: 700px) {
+    header{
+        height: 20vh;
+    }
+    .firstContainer{
+        height: 80vh;
+    }
+    aside {
+        line-height: 1em;
+        height: 100vh;
+    }
+
+
+
+}
+
+
