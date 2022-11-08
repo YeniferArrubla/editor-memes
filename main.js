@@ -401,3 +401,17 @@ noOutlineBtn.addEventListener('click', outlineNone);
 
 inpSpaced.addEventListener('input', spaced);
 
+//Media Queries
+
+let mediaQueries = matchMedia('(max-width:699px) and (min-width:360px)');
+
+let closeAsideMQ = (mq)=> {
+    if (mq.matches) {
+        body.classList.add('closeAside')
+    } else {
+        body.classList.remove('closeAside')
+    }
+}
+
+mediaQueries.addListener(closeAsideMQ);
+closeAsideMQ(mediaQueries);

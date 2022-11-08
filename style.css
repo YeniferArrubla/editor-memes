@@ -19,7 +19,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
 }
 
@@ -143,7 +143,7 @@ body {
 
 header {
     width: 80%;
-    height: 18%;
+    height: 20vh;
     text-align: center;
     background-color: var(--bGHeader);
     color: var(--whiteColor);
@@ -151,6 +151,7 @@ header {
 
 h1 {
     padding: 15px 0px;
+    font-size: 40px;
 }
 
 .headerButtons .btnHeader {
@@ -167,7 +168,7 @@ h1 {
 }
 
 .firstContainer {
-    height: 82%;
+    height: 80vh;
     width: 80%;
     background-color: var(--bGCont);
     color: var(--whiteColor);
@@ -240,6 +241,7 @@ img {
 
 /* Aside General Features */
 aside {
+    height: 100%;
     width: 20%;
     position: absolute;
     top: 0;
@@ -251,13 +253,8 @@ aside {
     font-size: 14px;
 }
 
-#imgSection {
-    height: 97.5vh;
-}
-
 #txtSection {
     display: none;
-    height: 97.5vh;
 }
 
 input[type=text], [type=number]{
@@ -341,6 +338,7 @@ select:hover{
 .closePanel{
     cursor: pointer;
     font-size: 25px;
+    margin-top: 10px;
 }
 
 .backgroundContainer {
@@ -373,6 +371,10 @@ input[type=color] {
 input[type=color]::-webkit-color-swatch {
     border-radius: 50%;
     border: none;
+}
+
+#selectBlendMode {
+    height: 40px;
 }
 
 .contResetBtn {
@@ -483,25 +485,29 @@ textarea:hover{
 
 /* Media Queris */
 
-@media (max-width: 1920px) and (min-width: 1370px) {
+@media (min-width: 1370px) {
     header{
-        height: 15vh;
+        height: 18vh;
+    }
+    .btnHeader{
+        font-size: 18px;
     }
     .firstContainer{
-        height: 85vh;
+        height: 82vh;
     }
    aside {
-    line-height: 2em;
+    line-height: 1.4em;
     height: 100vh;
+    font-size: 17px;
     }
 }
 
 @media (max-width: 1369px) and (min-width: 1280px) {
-    header{
-        height: 18vh;
+    h1 {
+        font-size: 30px;
     }
-    .firstContainer{
-        height: 82vh;
+    .btnHeader{
+        font-size: 18px;
     }
     aside {
         line-height: 1.3em;
@@ -512,17 +518,123 @@ textarea:hover{
 @media (max-width: 1279px) and (min-width: 700px) {
     header{
         height: 20vh;
+        width: 100%;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .btnHeader{
+        font-size: 12px;
     }
     .firstContainer{
         height: 80vh;
+        width: 100%;
     }
     aside {
-        line-height: 1em;
+        width: 40%;
+        line-height: 1.1em;
         height: 100vh;
+        z-index: 2;
     }
+    .backgroundContainer{
+        justify-content: space-around;
+    }
+    #txtSection {
+        line-height: 0.7em;
+        font-size: 11px;
+    }
+}
 
-
-
+@media (max-width:699px) and (min-width:360px){
+    header{
+        height: 18vh;
+        width: 100%;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .btnHeader{
+        font-size: 12px;
+    }
+    .firstContainer{
+        height: 82vh;
+        width: 100%;
+    }
+    .container {
+        width: 70%;
+        height: 60%;
+    }
+    aside {
+        width: 70%;
+        line-height: 1.1em;
+        height: 100vh;
+        z-index: 2;
+    }
+    .backgroundContainer{
+        justify-content: space-around;
+    }
+    .backgroundColorContainer {
+        width: 100px;
+        height: 30px;
+    }
+    #selectBlendMode {
+        width: 100px;
+        height: 30px;
+    }
+    #txtSection {
+        line-height: 0.7em;
+        font-size: 11px;
+    }
+}
+@media (max-width:359px) {
+    header{
+        height: 18vh;
+        width: 100%;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .btnHeader{
+        font-size: 12px;
+    }
+    .firstContainer{
+        height: 82vh;
+        width: 100%;
+    }
+    .container {
+        width: 70%;
+        height: 60%;
+    }
+    aside {
+        width: 70%;
+        line-height: 1.1em;
+        height: 100vh;
+        z-index: 2;
+    }
+    .backgroundContainer{
+        flex-direction: column;
+        gap: 8px;
+    }
+    .backgroundColorContainer {
+        width: 100px;
+        height: 30px;
+    }
+    #selectBlendMode {
+        width: 100px;
+        height: 30px;
+    }
+    #txtSection {
+        line-height: 0.7em;
+        font-size: 11px;
+    }
+    .contTextColorBackgr {
+        display: flex;
+        flex-direction: column;
+    }
+    .contOutlineBtns {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 
