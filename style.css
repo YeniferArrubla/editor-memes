@@ -53,8 +53,16 @@ body {
     display: block;
 }
 
-.closeModal .controlPanel {
+.closeAside .controlPanel {
     display: none;
+}
+
+.closeAside header {
+    width: 100%;
+}
+
+.closeAside .firstContainer {
+    width: 100%;
 }
 
 .topTextOculto .topText{
@@ -97,14 +105,16 @@ body {
 .trasparentTxtBG .topText{
     background-color: transparent !important;
     position: absolute;
-    width: 100%;
     top: 0;
+    width: 100%;
+    z-index: 1;
 }
 .trasparentTxtBG .bottomText{
     background-color: transparent !important;
     position: absolute;
     bottom: 0;
     width: 100%;
+    z-index: 1;
 }
 .trasparentTxtBG .container{
     position: relative;
@@ -469,6 +479,7 @@ textarea:hover{
 .contOutlineBtns button:hover{
     background-color: var(--bGHeader);
 }
+
 
 /* Media Queris */
 

@@ -11,8 +11,7 @@ let bottomText = $('.bottomText');
 let imgContainer= $('.imgContainer');
 
 //Close Panel
-let closeImgSection = $('#closeImgSection');
-let closeTxtSection = $('#closeTxtSection');
+let closePanel = $('#close');
 
 //Button
 let imgPanelBtn = $('#imgBtn');
@@ -71,8 +70,10 @@ let changeIPanel = () => {
     if(body.classList.contains('closeImgSection')) {
         body.classList.remove('closeImgSection')
         body.classList.remove('openTxtSection')
+        body.classList.remove('closeAside')
     } else {
         body.classList.remove('closeImgSection')
+        body.classList.remove('closeAside')
     }
 }
 
@@ -80,9 +81,11 @@ let changeTPanel = () => {
     body.classList.contains('openTxtSection')
     if(body.classList.contains('openTxtSection')) {
         body.classList.add('openTxtSection')
+        body.classList.remove('closeAside')
     } else {
         body.classList.add('openTxtSection')
         body.classList.add('closeImgSection')
+        body.classList.remove('closeAside')
     }
 }
 
@@ -104,6 +107,11 @@ const downloadMeme = ()=>{
 };
 
 //Aside Image Panel
+
+closePanel.addEventListener('click', () =>{
+    body.classList.contains('closeAside')
+    body.classList.toggle('closeAside')
+});
 
 let changeImage = (event)=>{
     imgContainer.style.backgroundImage = `url(${event.target.value})`
