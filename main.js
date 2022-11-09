@@ -403,15 +403,30 @@ inpSpaced.addEventListener('input', spaced);
 
 //Media Queries
 
-let mediaQueries = matchMedia('(max-width:699px) and (min-width:360px)');
-
-let closeAsideMQ = (mq)=> {
-    if (mq.matches) {
+let mediaQueriesOne = matchMedia('(max-width:699px) and (min-width:360px)');
+let closeAsideMQOne = (mediaQueriesOne)=> {
+    //console.log(mediaQueriesOne.matches)
+    if (mediaQueriesOne.matches) {
         body.classList.add('closeAside')
     } else {
         body.classList.remove('closeAside')
     }
-}
+};
 
-mediaQueries.addListener(closeAsideMQ);
-closeAsideMQ(mediaQueries);
+mediaQueriesOne.addListener(closeAsideMQOne);
+closeAsideMQOne(mediaQueriesOne);
+
+
+
+let mediaQueriesTwo = matchMedia('(max-width:359px)');
+let closeAsideMQTwo = (mediaQueriesTwo) => {
+    //console.log(mediaQueriesTwo.matches)
+    if (mediaQueriesTwo.matches) {
+        body.classList.add('closeAsideMQ') 
+    } else {
+        body.classList.remove('closeAsideMQ') 
+    }
+};
+
+mediaQueriesTwo.addListener(closeAsideMQTwo);
+closeAsideMQTwo(mediaQueriesTwo);

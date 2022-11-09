@@ -65,6 +65,17 @@ body {
     width: 100%;
 }
 
+.closeAsideMQ .controlPanel {
+    display: none;
+}
+
+.closeAsideMQ header {
+    width: 100%;
+}
+
+.closeAsideMQ .firstContainer {
+    width: 100%;
+}
 .topTextOculto .topText{
     display: none;
 }
@@ -521,18 +532,22 @@ textarea:hover{
         width: 100%;
     }
     h1 {
-        font-size: 20px;
+        font-size: 30px;
     }
     .btnHeader{
-        font-size: 12px;
+        font-size: 17px;
     }
     .firstContainer{
         height: 80vh;
         width: 100%;
     }
+    .container {
+        width: 60%;
+        height: 80%;
+    }
     aside {
         width: 40%;
-        line-height: 1.1em;
+        line-height: 1.3em;
         height: 100vh;
         z-index: 2;
     }
@@ -540,8 +555,8 @@ textarea:hover{
         justify-content: space-around;
     }
     #txtSection {
-        line-height: 0.7em;
-        font-size: 11px;
+        line-height: 1.3em;
+        font-size: 12px;
     }
 }
 
@@ -551,10 +566,10 @@ textarea:hover{
         width: 100%;
     }
     h1 {
-        font-size: 20px;
+        font-size: 30px;
     }
     .btnHeader{
-        font-size: 12px;
+        font-size: 13px;
     }
     .firstContainer{
         height: 82vh;
@@ -566,7 +581,7 @@ textarea:hover{
     }
     aside {
         width: 70%;
-        line-height: 1.1em;
+        line-height: 1.3em;
         height: 100vh;
         z-index: 2;
     }
@@ -582,13 +597,13 @@ textarea:hover{
         height: 30px;
     }
     #txtSection {
-        line-height: 0.7em;
-        font-size: 11px;
+        line-height: 1.3em;
+        font-size: 12px;
     }
 }
 @media (max-width:359px) {
     header{
-        height: 18vh;
+        height: 25vh;
         width: 100%;
     }
     h1 {
@@ -598,12 +613,12 @@ textarea:hover{
         font-size: 12px;
     }
     .firstContainer{
-        height: 82vh;
+        height: 75vh;
         width: 100%;
     }
     .container {
         width: 70%;
-        height: 60%;
+        height: 50%;
     }
     aside {
         width: 70%;
@@ -624,8 +639,8 @@ textarea:hover{
         height: 30px;
     }
     #txtSection {
-        line-height: 0.7em;
-        font-size: 11px;
+        line-height: 0.5em;
+        font-size: 10px;
     }
     .contTextColorBackgr {
         display: flex;
