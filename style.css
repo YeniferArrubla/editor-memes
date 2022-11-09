@@ -213,6 +213,7 @@ h1 {
     color: var(--whiteColor);
     font-size: 25px;
     text-align: center;
+    word-break: break-word;
 }
 .bottomText{
     height: 20%;
@@ -223,6 +224,7 @@ h1 {
     color: var(--whiteColor);
     font-size: 25px;
     text-align: center;
+    word-break: break-word;
 }
 
 .imgContainer {
