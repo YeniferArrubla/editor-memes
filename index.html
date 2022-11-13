@@ -41,17 +41,30 @@
     <title>Generador de Memes</title>
   </head>
   <body class="" id="body">
+    
     <!-- Header Section -->
     <header>
-      <h1>Generador de Memes</h1>
+      <h1 tabindex="1">Generador de Memes</h1>
       <div class="headerButtons">
-        <button class="btnHeader" id="imgBtn">🖼️ Imagen</button>
-        <button class="btnHeader" id="txtBtn">🖊️ Texto</button>
-        <button class="btnHeader" id="lightMode">☀️ Modo Claro</button>
+        <button class="btnHeader" id="imgBtn" tabindex="2" aria-label="Imagen">
+          🖼️ Imagen
+        </button>
+        <button class="btnHeader" id="txtBtn" tabindex="11" aria-label="Texto">
+          🖊️ Texto
+        </button>
+        <button
+          class="btnHeader"
+          id="lightMode"
+          tabindex="4"
+          aria-label="Cambio de modo oscuro a claro y vicevesa"
+        >
+          ☀️ Modo Claro
+        </button>
       </div>
     </header>
 
     <!-- Main Section -->
+
     <div class="firstContainer">
       <main class="mainSection">
         <div class="container">
@@ -59,32 +72,53 @@
           <div class="imgContainer"></div>
           <p class="bottomText">Texto Inferior</p>
         </div>
-        <button class="downloadBtn">📩 Descargar Meme</button>
+
+        <button class="downloadBtn" tabindex="24" aria-label="Descargar Meme">
+          📩 Descargar Meme
+        </button>
       </main>
     </div>
 
     <!-- Aside Section -->
     <aside class="controlPanel">
       <div class="closePanel">
-        <span id="close">&times;</span>
+        <span id="close" tabindex="5" aria-label="cerrar panel">&times;</span>
       </div>
 
       <!-- Aside Img section -->
       <section id="imgSection">
-        <h2>Imagen</h2>
+        <h2 tabindex="6">Imagen</h2>
+
         <div>
           <h3>URL</h3>
-          <input type="text" id="url" />
+          <input
+            type="text"
+            id="url"
+            tabindex="7"
+            aria-label="Ingresar url para meme"
+          />
         </div>
+
         <div>
-          <h3>FONDO</h3>
+          <h3 tabindex="8">FONDO</h3>
           <div class="backgroundContainer">
             <div class="backgroundColorContainer">
-              <input type="color" id="imgColorBg" />
+              <input
+                type="color"
+                id="imgColorBg"
+                tabindex="8"
+                aria-label="Elige color mix filtro"
+              />
               <span id="colorRef">#FFFFFF</span>
             </div>
+
             <div>
-              <select name="" id="selectBlendMode">
+              <select
+                name="seleccion mix filtro"
+                id="selectBlendMode"
+                tabindex="8"
+                aria-label="seleccion mix filtro"
+              >
                 <option value="unset">Ninguno</option>
                 <option value="lighten">Aclarar</option>
                 <option value="darken">Oscurecer</option>
@@ -95,10 +129,11 @@
             </div>
           </div>
         </div>
+        
         <div>
-          <h3>FILTROS</h3>
+          <h3 tabindex="9">FILTROS</h3>
           <div>
-            <label for="">BRILLO</label>
+            <label for="brillo">BRILLO</label>
             <input
               type="range"
               id="brightness"
@@ -106,10 +141,12 @@
               max="1"
               value="1"
               step="0.1"
+              tabindex="9"
+              aria-label="rango de brillo"
             />
           </div>
           <div>
-            <label for="">OPACIDAD</label>
+            <label for="opacidad">OPACIDAD</label>
             <input
               type="range"
               id="opacity"
@@ -117,10 +154,12 @@
               max="1"
               value="1"
               step="0.1"
+              tabindex="9"
+              aria-label="rango de opacidad"
             />
           </div>
           <div>
-            <label for="">CONTRASTE</label>
+            <label for="contraste">CONTRASTE</label>
             <input
               type="range"
               id="contrast"
@@ -128,10 +167,12 @@
               max="1000"
               step="1"
               value="100"
+              tabindex="9"
+              aria-label="rango de contraste"
             />
           </div>
           <div>
-            <label for="">DESENFOQUE</label>
+            <label for="desenfoque">DESENFOQUE</label>
             <input
               type="range"
               id="blur"
@@ -139,22 +180,48 @@
               max="10"
               value="0"
               step="0.1"
+              tabindex="9"
+              aria-label="rango de desenfoque"
             />
           </div>
           <div>
-            <label for="">ESCALA DE GRISES</label>
-            <input type="range" id="grayscale" min="0" max="100" value="0" />
+            <label for="escala grises">ESCALA DE GRISES</label>
+            <input
+              type="range"
+              id="grayscale"
+              min="0"
+              max="100"
+              value="0"
+              tabindex="9"
+              aria-label="rango de escala de grises"
+            />
           </div>
           <div>
-            <label for="">SEPIA</label>
-            <input type="range" id="sepia" min="0" max="100" value="0" />
+            <label for="sepia">SEPIA</label>
+            <input
+              type="range"
+              id="sepia"
+              min="0"
+              max="100"
+              value="0"
+              tabindex="9"
+              aria-label="rango de sepia"
+            />
           </div>
           <div>
-            <label for="">HUE</label>
-            <input type="range" id="hue-rotate" min="0" max="360" value="0" />
+            <label for="matiz">HUE</label>
+            <input
+              type="range"
+              id="hue-rotate"
+              min="0"
+              max="360"
+              value="0"
+              tabindex="9"
+              aria-label="rango de matiz"
+            />
           </div>
           <div>
-            <label for="">SATURADO</label>
+            <label for="saturacion">SATURADO</label>
             <input
               type="range"
               id="saturate"
@@ -162,10 +229,12 @@
               max="1000"
               value="100"
               step="10"
+              tabindex="9"
+              aria-label="rango de saturacion"
             />
           </div>
           <div>
-            <label for="">NEGATIVO</label>
+            <label for="negativo">NEGATIVO</label>
             <input
               type="range"
               id="invert"
@@ -173,51 +242,77 @@
               max="1"
               value="0"
               step="0.1"
+              tabindex="9"
+              aria-label="rango negativo color"
             />
           </div>
         </div>
 
         <div class="contResetBtn">
-          <button id="resetBtn">Restablecer Filtros</button>
+          <button id="resetBtn" tabindex="10" aria-label="restablecer filtros">
+            Restablecer Filtros
+          </button>
         </div>
       </section>
 
       <!-- Aside Text Section -->
       <section id="txtSection">
-        <h2>TEXTO</h2>
+        <h2 tabindex="12">TEXTO</h2>
+        
         <div>
-          <h3>SUPERIOR</h3>
+          <h3 tabindex="13">SUPERIOR</h3>
           <textarea
-            name=""
+            name="texto superior"
             id="topTextArea"
             cols="25"
             rows="2"
             maxlength="40"
             placeholder="TEXTO SUPERIOR"
+            tabindex="13"
+            aria-label="Ingrese el texto superior"
           ></textarea>
           <div>
-            <input type="checkbox" id="ckbTopTxt" />
-            <label for="">Sin texto superior</label>
+            <input
+              type="checkbox"
+              id="ckbTopTxt"
+              tabindex="13"
+              aria-label="sin texto superior"
+            />
+            <label for="sin texto superior">Sin texto superior</label>
           </div>
         </div>
+        
         <div>
-          <h3>INFERIOR</h3>
+          <h3 tabindex="14">INFERIOR</h3>
           <textarea
-            name=""
+            name="texto inferior"
             id="bottomTextArea"
             cols="25"
             rows="2"
             placeholder="TEXTO INFERIOR"
             maxlength="40"
+            tabindex="14"
+            aria-label="Ingrese el texto inferior"
           ></textarea>
           <div>
-            <input type="checkbox" id="ckbbottomTxt" />
-            <label for="">Sin texto Inferior</label>
+            <input
+              type="checkbox"
+              id="ckbbottomTxt"
+              tabindex="14"
+              aria-label="Ingrese el texto inferior"
+            />
+            <label for="sin texto inferior">Sin texto Inferior</label>
           </div>
         </div>
+        
         <div>
-          <h3>FUENTE</h3>
-          <select name="" id="selectFontFamily">
+          <h3 tabindex="15">FUENTE</h3>
+          <select
+            name="seleccion fuente"
+            id="selectFontFamily"
+            tabindex="15"
+            aria-label="elegir tipo de fuente"
+          >
             <option value="Arial">Arial</option>
             <option value="fantasy">fantasy</option>
             <option value="Fasthand">Fasthand</option>
@@ -228,15 +323,38 @@
             <option value="Poor Story">Poor Story</option>
           </select>
           <div class="contFontSize">
-            <input type="number" id="fontSize" min="12" max="35" value="25" />
+            <input
+              type="number"
+              id="fontSize"
+              min="12"
+              max="35"
+              value="25"
+              tabindex="16"
+              aria-label="tamaño de fuente desde 12 hasta 35"
+            />
             <div class="contAlingText">
-              <button class="alingTextBtn" id="aTxtLeft">
+              <button
+                class="alingTextBtn"
+                id="aTxtLeft"
+                tabindex="17"
+                aria-label="alinear texto izquierda"
+              >
                 <i class="fa-solid fa-align-left"></i>
               </button>
-              <button class="alingTextBtn" id="aTxtCenter">
+              <button
+                class="alingTextBtn"
+                id="aTxtCenter"
+                tabindex="17"
+                aria-label="texto centrado"
+              >
                 <i class="fa-solid fa-align-center"></i>
               </button>
-              <button class="alingTextBtn" id="aTxtRight">
+              <button
+                class="alingTextBtn"
+                id="aTxtRight"
+                tabindex="17"
+                aria-label="alinear texto derecha"
+              >
                 <i class="fa-solid fa-align-right"></i>
               </button>
             </div>
@@ -246,42 +364,73 @@
         <div>
           <div class="contTextColorBackgr">
             <div>
-              <h3>COLOR</h3>
+              <h3 tabindex="18">COLOR</h3>
               <div class="contTextColor">
-                <input type="color" id="textColor" />
+                <input
+                  type="color"
+                  id="textColor"
+                  tabindex="18"
+                  aria-label="elegir color fuente"
+                />
                 <span id="refTextColor">#000000</span>
               </div>
             </div>
+            
             <div>
-              <h3>FONDO</h3>
+              <h3 tabindex="19">FONDO</h3>
               <div class="contTextColor">
-                <input type="color" id="bGFontFamily"/>
+                <input
+                  type="color"
+                  id="bGFontFamily"
+                  tabindex="19"
+                  aria-label="elegir color fondo fuente"
+                />
                 <span id="refBGFontFamily">#FFFFFF</span>
               </div>
             </div>
           </div>
           <div>
-            <input type="checkbox" id="transparenBG"/> <label for="">Fondo trasparente</label>
+            <input
+              type="checkbox"
+              id="transparenBG"
+              tabindex="20"
+              aria-label="con fondo transparente"
+            />
+            <label for="fondo trasparente">Fondo trasparente</label>
           </div>
         </div>
 
         <div class="contOutline">
-          <h3>CONTORNO</h3>
+          <h3 tabindex="21">CONTORNO</h3>
           <div class="contOutlineBtns">
-            <button id="noOutlineBtn">Ninguno</button>
-            <button id="outlineWhiteBtn">Claro</button>
-            <button id="outlineDarkBtn">Oscuro</button>
+            <button id="noOutlineBtn" tabindex="21">Ninguno</button>
+            <button id="outlineWhiteBtn" tabindex="21">Claro</button>
+            <button id="outlineDarkBtn" tabindex="21">Oscuro</button>
           </div>
         </div>
 
         <div>
-          <h3>ESPACIADO</h3>
-          <input type="number" name="" id="spaced" min="10" max="50" value="35" />
+          <h3 tabindex="22">ESPACIADO</h3>
+          <input
+            type="number"
+            name="espaciado"
+            id="spaced"
+            min="10"
+            max="50"
+            value="35"
+            tabindex="22"
+            aria-label="elegir espaciado desde 10 hasta 50"
+          />
         </div>
 
         <div>
-          <h3>INTERLINEADO</h3>
-          <select name="" id="lineHeightSelect">
+          <h3 tabindex="23">INTERLINEADO</h3>
+          <select
+            name="interlineado"
+            id="lineHeightSelect"
+            tabindex="23"
+            aria-label="elegir espaciado"
+          >
             <option value="0.8">0.8</option>
             <option value="1">1</option>
             <option value="1.2" selected>1.2</option>
