@@ -212,33 +212,50 @@ let hidenBText =()=>{
     body.classList.contains('bottomTextOculto')
 };
 
-let selectFontFamilys = ()=> {
-    if (selectFontFamily.value=='Arial') {
-        topText.style.fontFamily = 'Arial',
-        bottomText.style.fontFamily = 'Arial'
-    } if(selectFontFamily.value=='fantasy'){
-        topText.style.fontFamily = 'fantasy',
-        bottomText.style.fontFamily = 'fantasy'
-    } if(selectFontFamily.value == 'Fasthand'){
-        topText.style.fontFamily = 'Fasthand',
-        bottomText.style.fontFamily = 'Fasthand'
-    } if(selectFontFamily.value == 'Island Moments'){
-        topText.style.fontFamily = 'Island Moments',
-        bottomText.style.fontFamily = 'Island Moments'
-    } if(selectFontFamily.value == 'Helvetica'){
-        topText.style.fontFamily = 'Helvetica',
-        bottomText.style.fontFamily = 'Helvetica'
-    } if(selectFontFamily.value == 'Nanum Pen Script'){
-        topText.style.fontFamily = 'Nanum Pen Script',
-        bottomText.style.fontFamily = 'Nanum Pen Script'
-    }if(selectFontFamily.value == 'Verdana'){
-        topText.style.fontFamily = 'Verdana',
-        bottomText.style.fontFamily = 'Verdana'
-    } if(selectFontFamily.value == 'Poor Story'){
-        topText.style.fontFamily = 'Poor Story',
-        bottomText.style.fontFamily = 'Poor Story'
+let selectFontFamilys = () => {
+    
+    switch (selectFontFamily.value) {
+        case 'Arial':
+            topText.style.fontFamily = 'Arial',
+            bottomText.style.fontFamily = 'Arial'
+            break;
+            
+        case 'fantasy':
+            topText.style.fontFamily = 'fantasy',
+            bottomText.style.fontFamily = 'fantasy'
+            break;
+
+        case 'Fasthand':
+            topText.style.fontFamily = 'Fasthand',
+            bottomText.style.fontFamily = 'Fasthand'
+            break;
+
+        case 'Island Moments':
+            topText.style.fontFamily = 'Island Moments',
+            bottomText.style.fontFamily = 'Island Moments'
+            break;
+
+        case 'Helvetica':
+            topText.style.fontFamily = 'Helvetica',
+            bottomText.style.fontFamily = 'Helvetica'
+            break;
+
+        case 'Nanum Pen Script':
+            topText.style.fontFamily = 'Nanum Pen Script',
+            bottomText.style.fontFamily = 'Nanum Pen Script'
+            break;
+
+        case 'Verdana':
+            topText.style.fontFamily = 'Verdana',
+            bottomText.style.fontFamily = 'Verdana'
+            break; 
+            
+        case 'Poor Story':
+            topText.style.fontFamily = 'Poor Story',
+            bottomText.style.fontFamily = 'Poor Story'
+            break;
     }
-};
+}
 
 let fFamilySize = ()=>{
     topText.style.fontSize = `${inpFontSize.value}px`,
