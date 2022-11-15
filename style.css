@@ -300,13 +300,13 @@ h1 {
   cursor: pointer;
 }
 .btnHeader:hover {
-  background-color: var(--bGBtn);
+  background-color: var(--blackcolor);
 }
 
 .firstContainer {
   height: 80vh;
   width: 80%;
-  background-image: url(./assets/bgImageDark.webp);
+  background-image: url(./assets/bgImageDark.jpg);
   background-repeat: repeat;
   background-size: 100% 100%;
   color: var(--whiteColor);
@@ -545,7 +545,7 @@ input[type="color"]::-webkit-color-swatch {
   margin-top: 18px;
 }
 #resetBtn:hover {
-  background-color: var(--bGHeader);
+  background-color: var(--blackcolor);
 }
 
 /* Aside Text Panel */
